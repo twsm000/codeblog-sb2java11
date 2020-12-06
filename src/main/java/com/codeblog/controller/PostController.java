@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,5 +23,13 @@ public class PostController {
         ModelAndView mv = new ModelAndView("posts");
         List<Post> posts = service.findAll();
         return mv.addObject("posts", posts);
+    }
+
+    @RequestMapping(value = "/posts/{id}")
+    @GetMapping
+    public ModelAndView getPostDetails(@PathVariable(name = "id") Long id) {
+        ModelAndView mv = new ModelAndView("postDetails");
+        Post post = service.findById(id);        
+        return mv.addObject("post", post);
     }
 }
