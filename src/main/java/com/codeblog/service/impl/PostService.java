@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.codeblog.model.Post;
@@ -18,7 +19,7 @@ public class PostService implements DefaultService<Post>{
     
     @Override
     public List<Post> findAll() {
-        return repository.findAll();
+        return repository.findAll(Sort.by(Sort.Direction.DESC, "id"));
     }
 
     @Override
