@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.codeblog.model.Post;
 
 @Repository
-public interface CodeblogRepository extends JpaRepository<Post, Long>{
+public interface PostRepository extends JpaRepository<Post, Long>{
 
 }
