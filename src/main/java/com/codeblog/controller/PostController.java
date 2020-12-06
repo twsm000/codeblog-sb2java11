@@ -23,5 +23,4 @@ public class PostController {
         List<Post> posts = service.findAll();
         return mv.addObject("posts", posts);
     }
-    
 }
