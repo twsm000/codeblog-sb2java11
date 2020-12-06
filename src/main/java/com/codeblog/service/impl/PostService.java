@@ -1,5 +1,6 @@
 package com.codeblog.service.impl;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,6 +29,7 @@ public class PostService implements DefaultService<Post>{
 
     @Override
     public Post save(Post entity) {
+        entity.setCreatedAt(LocalDate.now());
         return repository.save(entity);
     }
 
