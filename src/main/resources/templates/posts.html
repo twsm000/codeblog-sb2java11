@@ -12,6 +12,7 @@
 	<header>
 		<nav class="navbar navbar-light bg-light">
 			<span class="navbar-brand mb-0 h1" style="font-weight: bold">MyCodeBlog</span>
+			<a href="/newpost" class="btn btn-secondary" role="button">New Post</a>
 		</nav>
 	</header>
 	<section>
@@ -29,8 +30,8 @@
 						<span th:text="${post.author}"></span> <span th:text="${post.createdAt}"></span>
 					</p>
 					<h4 class="card-title" style="font-weight: bold; padding-top: 5px;">
-						<a th:href="@{'/posts/' + ${post.id}}"  
-							style="color: black;"><span th:text="${post.title}"></span> </a>
+						<a th:href="@{'/posts/' + ${post.id}}" style="color: black;"><span
+							th:text="${post.title}"></span> </a>
 					</h4>
 					<p class="card-text">
 						<span th:utext="${#strings.abbreviate(post.text, 400)}"></span>
